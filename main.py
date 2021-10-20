@@ -87,9 +87,7 @@ def superprim(l):
     return rezultat
 
 
-def test_superprim():
-    assert superprim([1, 3, 239, 121]) == [239]
-    assert superprim([4, 6, 121, 99, 237]) == [237]
+
 
 
 def main():
@@ -97,7 +95,7 @@ def main():
     test_nr_neg()
     test_ultimacifegala()
     test_is_prime()
-    test_superprim()
+
     while True:
         print('1.Citire lista')
         print('2.Afiseaza toate numerele negative nenule din listă.')

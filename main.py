@@ -86,8 +86,29 @@ def superprim(l):
             rezultat.append(cop)
     return rezultat
 
+def get_cmmdc(x, y):
+    '''
+    Determina CMMDC al 2 numere
+    :param x: primul numar
+    :param y: al doilea numar
+    :return: cmmdc al celor 2 numere
+    '''
+    while x != y:
+        if x > y:
+            x = x - y
+        else:
+            y = y - x
+    return x
 
-
+def test_cmmdc():
+    assert get_cmmdc(10,5)==5
+    assert get_cmmdc(15,30)==15
+def lista_nr_poz(l):
+    rezultat=[]
+    for i in l:
+        if i>0:
+            rezultat.append(i)
+    return rezultat
 
 
 def main():
@@ -95,14 +116,13 @@ def main():
     test_nr_neg()
     test_ultimacifegala()
     test_is_prime()
-
+    test_cmmdc()
     while True:
         print('1.Citire lista')
         print('2.Afiseaza toate numerele negative nenule din listă.')
         print('3.Afișeaza cel mai mic număr care are ultima cifră egală cu o cifră citită de la tastatură.')
-        print(
-            '4. Afișeaza toate numerele din listă care sunt superprime. Un număr este superprim dacă este strict pozitiv și toate prefixele sale sunt prime.')
-        print('5. ')
+        print('4. Afișeaza toate numerele din listă care sunt superprime. Un număr este superprim dacă este strict pozitiv și toate prefixele sale sunt prime.')
+        print('5.Afișeaza lista obținuta din lista inițială în care numerele pozitive și nenule au fost înlocuite cu CMMDC-ul lor și numerele negative au cifrele în ordine inversă. ')
         print('x.Iesire din program')
         opt = input('Alege optiunea: ')
         if opt == '1':
